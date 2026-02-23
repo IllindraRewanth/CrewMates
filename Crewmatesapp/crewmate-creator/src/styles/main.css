@@ -1,0 +1,201 @@
+.main {
+    animation: fadeIn 0.4s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+:root {
+    --beige: #f5f5dc;
+    --gray: #d3d3d3;
+    --white: #ffffff;
+    --black: #000000;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--black);
+  }
+  
+  .layout {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 240px;
+    background: var(--beige);
+    padding: 2rem 1rem;
+    border-right: 2px solid var(--gray);
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 1rem 0;
+  }
+  
+  .sidebar a {
+    color: var(--black);
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover {
+    color: var(--gray);
+  }
+  
+  .main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .card {
+    background: var(--beige);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    animation: fadeIn 0.6s ease;
+  }
+  
+  button {
+    background-color: var(--gray);
+    color: var(--black);
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--beige);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Slide and pop effects */
+@keyframes slideInUp {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Animate cards */
+  .card {
+    animation: slideInUp 0.5s ease-out;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button hover with light pulse */
+  button {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.4s ease;
+    z-index: 0;
+  }
+  
+  button:hover::after {
+    left: 100%;
+  }
+  
+  /* Dark mode overrides */
+.dark-mode {
+    background-color: #0e0e0e;
+    color: #eeeeee;
+  }
+  
+  .dark-mode .sidebar {
+    background-color: #1a1a1a;
+    border-color: #444;
+  }
+  
+  .dark-mode .main,
+  .dark-mode .card {
+    background-color: #111;
+    color: #ccc;
+  }
+  
+  .dark-mode .card {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+  }
+  
+  .dark-mode a {
+    color: #66ff66;
+  }
+  
+  .animated-form > * {
+    animation: fadeSlide 0.4s ease;
+    animation-fill-mode: both;
+  }
+  
+  .animated-form > *:nth-child(1) { animation-delay: 0.1s; }
+  .animated-form > *:nth-child(2) { animation-delay: 0.2s; }
+  .animated-form > *:nth-child(3) { animation-delay: 0.3s; }
+  /* You can keep going for each field */
+  
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes popFade {
+    0% { opacity: 0; transform: scale(0.5); }
+    70% { opacity: 1; transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
